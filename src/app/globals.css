@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+/* 🌈 Define your design tokens */
+@theme {
+  /* Fonts */
+  --font-sans: Inter, sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  /* Colors */
+  --color-brand: #0f4e52;
+  --color-brand-light: #e0f2f1;
+  --color-brand-dark: #003c3c;
+
+  --color-accent-gold: #a6923d;
+  --color-accent-cream: #fff8f1;
+  --color-accent-black: #111111;
+
+  --color-text: #1e293b;
+
+  /* Typography sizes */
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+}
+
+/* 🧱 Base layer for fonts, text color, etc. */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  body {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+}
+
+/* 🧩 Reusable utility classes */
+@layer utilities {
+  /* Brand colors */
+  .text-brand {
+    color: var(--color-brand);
+  }
+  .bg-brand {
+    background-color: var(--color-brand);
+  }
+  .bg-brand-light {
+    background-color: var(--color-brand-light);
+  }
+  .bg-brand-dark {
+    background-color: var(--color-brand-dark);
+  }
+
+  /* Accent colors */
+  .text-accent-gold {
+    color: var(--color-accent-gold);
+  }
+  .bg-accent-cream {
+    background-color: var(--color-accent-cream);
+  }
+  .text-accent-black {
+    color: var(--color-accent-black);
+  }
+
+  /* Font sizes */
+  .text-base {
+    font-size: var(--text-base);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+  }
+
+  /* Spacing */
+  .space-1 {
+    margin: var(--space-1);
+  }
+  .space-2 {
+    margin: var(--space-2);
+  }
+  .space-3 {
+    margin: var(--space-3);
+  }
+  .space-4 {
+    margin: var(--space-4);
+  }
+  .space-5 {
+    margin: var(--space-5);
+  }
+  .space-6 {
+    margin: var(--space-6);
+  }
+  .space-8 {
+    margin: var(--space-8);
+  }
+  .space-10 {
+    margin: var(--space-10);
+  }
+  .space-12 {
+    margin: var(--space-12);
+  }
+  .space-16 {
+    margin: var(--space-16);
+  }
+}
+/* Tailwind V4 CSS-first config with @theme already set */
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center font-medium rounded-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Variants */
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-dark focus-visible:ring-brand-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-accent-cream text-accent-black hover:bg-brand-light focus-visible:ring-brand;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-brand hover:bg-brand-light focus-visible:ring-brand;
+  }
+
+  .btn-link {
+    @apply text-brand underline hover:text-brand-dark focus-visible:ring-brand;
+  }
+
+  /* Sizes */
+  .btn-sm {
+    @apply text-sm px-3 py-1.5;
+  }
+
+  .btn-base {
+    @apply text-base px-4 py-2;
+  }
+
+  .btn-lg {
+    @apply text-lg px-6 py-3;
+  }
+
+  /* Loading Spinner */
+  .btn-loading {
+    @apply relative;
+  }
+
+  .btn-loading::after {
+    content: "";
+    @apply absolute w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+    left: 0.5rem;
+  }
+
+  .btn-icon-start > svg {
+    @apply mr-2 h-5 w-5;
+  }
+
+  .btn-icon-end > svg {
+    @apply ml-2 h-5 w-5;
+  }
+}
