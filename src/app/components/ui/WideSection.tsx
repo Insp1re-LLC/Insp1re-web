@@ -15,8 +15,8 @@ export default function WideSection({
   className,
 }: WideSectionProps) {
   return (
-    <section className={cn("text-center px-6", className)}>
-      <h2 className="text-3xl md:text-5xl font-heading text-brand mb-4">
+    <section className={cn("text-center px-30 py-35", className)}>
+      <h2 className="text-8xl md:text-7xl font-heading text-brand mb-4">
         {title}
       </h2>
       {subtitle && (

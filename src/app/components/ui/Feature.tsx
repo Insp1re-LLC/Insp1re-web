@@ -12,6 +12,7 @@ interface FeatureSectionProps {
   imageSrc: string;
   imageAlt?: string;
   reverse?: boolean;
+  align?: "left" | "center" | "right";
   cta?: {
     label: string;
     onClick?: () => void;
@@ -27,6 +28,7 @@ export default function FeatureSection({
   imageSrc,
   imageAlt = "Feature Image",
   reverse = false,
+  align = "center",
   cta,
   className,
   children,
@@ -34,13 +36,20 @@ export default function FeatureSection({
   return (
     <section
       className={cn(
-        "flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 px-6",
+        "flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 px-6 py-8 md:py-12",
         reverse && "md:flex-row-reverse",
         className
       )}
     >
       {/* Text content */}
-      <div className="w-full md:w-1/2 space-y-3 text-center md:text-left">
+      <div
+        className={cn(
+          "w-full md:w-1/2 space-y-3",
+          align === "left" && "text-left",
+          align === "right" && "text-right",
+          align === "center" && "text-center"
+        )}
+      >
         {subtitle && (
           <p className="text-accent-gold text-sm uppercase tracking-wide font-semibold">
             {subtitle}

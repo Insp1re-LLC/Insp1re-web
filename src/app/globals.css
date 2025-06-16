@@ -44,7 +44,7 @@
   html {
     font-family: var(--font-sans);
     color: var(--color-text);
-    background-color: white;
+    background-color: var(--color-accent-cream);
   }
 
   h1,
@@ -154,7 +154,7 @@
 
   /* Variants */
   .btn-primary {
-    @apply bg-brand text-white hover:bg-brand-dark focus-visible:ring-brand-dark;
+    @apply bg-accent-gold text-white hover:bg-accent-cream hover:text-black focus-visible:ring-brand-dark;
   }
 
   .btn-secondary {

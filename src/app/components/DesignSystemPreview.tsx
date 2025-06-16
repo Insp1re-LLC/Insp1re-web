@@ -7,7 +7,7 @@ import Footer from "@/app/components/ui/Footer";
 import Hero from "@/app/components/ui/Hero";
 import HeroText from "@/app/components/ui/Hero";
 import WideSection from "@/app/components/ui/WideSection";
-import Accordion from "@/app/components/ui/Accordian";
+import Accordion from "@/app/components/ui/Accordion";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function DesignSystemPreview() {

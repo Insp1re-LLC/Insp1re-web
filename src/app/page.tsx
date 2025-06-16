@@ -42,8 +42,7 @@ export default function HomePage() {
       <Feature
         title="The app has helped me become more mindful and focused in my daily life"
         body="Inspire operates on a freemium model with subscription upgrades and affiliate wellness partnerships."
-        imageSrc="/assets/inspire.png"
-        reverse
+        imageSrc="/assets/profilepic.png"
         className="pt-0"
       />
 
@@ -52,7 +51,7 @@ export default function HomePage() {
         className="py-12"
       />
 
-      <section className="bg-accent-gold text-white py-5 text-center">
+      <section className="bg-accent-gold text-white py-20 text-center">
         <h2 className="text-3xl md:text-4xl font-heading">PROMO</h2>
       </section>
 

@@ -51,22 +51,24 @@ export default function Hero({
   return (
     <section
       className={cn(
-        "px-6 flex flex-col items-center justify-center text-center bg-white",
+        "px-6 py-20 md:py-32 flex flex-col items-center justify-center text-center bg-brand",
         className
       )}
     >
-      <div className="max-w-3xl space-y-4">
+      <div className="max-w-3xl space-y-6 md:space-y-8">
+        <h1 className="text-4xl md:text-5xl font-heading font-bold text-white">
+          {title}
+        </h1>
         {subtitle && (
-          <p className="text-accent-gold text-sm uppercase tracking-wide font-semibold">
+          <p className="text-white text-base md:text-lg font-medium leading-relaxed">
             {subtitle}
           </p>
         )}
-        <h1 className="text-4xl md:text-5xl font-heading text-brand font-bold">
-          {title}
-        </h1>
         {cta && (
           <div className="mt-6">
-            <CTAButton onClick={cta.onClick}>{cta.label}</CTAButton>
+            <CTAButton variant="primary" onClick={cta.onClick}>
+              {cta.label}
+            </CTAButton>
           </div>
         )}
         {children && <div className="mt-6">{children}</div>}
