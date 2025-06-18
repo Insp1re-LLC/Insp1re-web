@@ -11,7 +11,6 @@ export default function PartnerPage() {
     <main className="min-h-screen flex flex-col bg-accent-cream text-text">
       <Header />
 
-      {/* Hero Section */}
       <Hero
         variant="text"
         title="Partner with Insp1re"
