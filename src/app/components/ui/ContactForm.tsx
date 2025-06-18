@@ -41,7 +41,7 @@ export default function ContactFormSheet() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -49,7 +49,30 @@ export default function ContactFormSheet() {
     } else {
       setErrors({});
       setSubmitted(true);
-      // Trigger actual form submission or API call here
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        });
+
+        if (!res.ok) throw new Error("Failed to submit");
+
+        setSubmitted(true);
+        setForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+          agree: false,
+        });
+      } catch (err) {
+        console.error(err);
+        alert("There was a problem submitting the form.");
+      }
     }
   };
 

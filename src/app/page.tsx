@@ -4,7 +4,7 @@ import Header from "@/app/components/ui/Header";
 import Hero from "@/app/components/ui/Hero";
 // import WideSection from "@/app/components/ui/WideSection";
 import Footer from "@/app/components/ui/Footer";
-import Image from "next/image";
+// import Image from "next/image";
 import FeatureHighlight from "./components/ui/FeatureHighlight";
 import Feature from "@/app/components/ui/Feature";
 import { FaBrain, FaChartLine, FaDumbbell } from "react-icons/fa";

@@ -5,7 +5,7 @@ import CTAButton from "@/app/components/ui/CTA";
 import Header from "@/app/components/ui/Header";
 import Footer from "@/app/components/ui/Footer";
 import Hero from "@/app/components/ui/Hero";
-import HeroText from "@/app/components/ui/Hero";
+// import HeroText from "@/app/components/ui/Hero";
 import WideSection from "@/app/components/ui/WideSection";
 import Accordion from "@/app/components/ui/Accordion";
 import { FaArrowRight } from "react-icons/fa";
