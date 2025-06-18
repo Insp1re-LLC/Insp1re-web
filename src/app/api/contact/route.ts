@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const { firstName, lastName, email, phone, message, agree } = body;
+  const { firstName, lastName, email, agree } = body;
 
   if (!firstName || !lastName || !email || !agree) {
     return NextResponse.json(
@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     );
   }
 
-  // Log or send this info (e.g., via Resend, SendGrid, etc.)
+  // Log or send this info (you can destructure the rest later when needed)
   console.log("Contact Form Submission:", body);
 
   return NextResponse.json({ success: true });
