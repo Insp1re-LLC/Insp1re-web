@@ -38,7 +38,7 @@ export default function PartnerPage() {
         >
           <Feature
             title="Insp1re is built for lasting impact."
-            body="We’re more than a self-improvement app — we’re a platform for personal transformation.
+            body="We're more than a self-improvement app — we're a platform for personal transformation.
 By combining mindfulness, movement, and motivation, Insp1re helps individuals build lifelong habits of self-awareness and growth. Our mission is to make meaningful change approachable, accessible, and joyful."
             imageSrc="/assets/partnerImg.png"
             align="left"
@@ -58,7 +58,7 @@ By combining mindfulness, movement, and motivation, Insp1re helps individuals bu
           <Feature
             title="A partnership rooted in purpose."
             body="We take a thoughtful, human-centered approach to growth. Through curated content, engaging tools, and intentional design, we support users on their self-mastery journey — one small step at a time.
-As a partner, you’ll help amplify that mission while gaining access to collaborative campaigns and shared success."
+As a partner, you'll help amplify that mission while gaining access to collaborative campaigns and shared success."
             imageSrc="/assets/handShake.png"
             reverse
             align="left"
