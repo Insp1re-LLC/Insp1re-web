@@ -1,6 +1,7 @@
 "use client";
 
 import Accordion from "@/app/components/ui/Accordion";
+import { motion } from "framer-motion";
 
 export default function FaqSection() {
   const faqItems = [
@@ -32,14 +33,30 @@ export default function FaqSection() {
   ];
 
   return (
-    <section className="bg-accent-cream py-16 px-4 md:px-8 text-center">
-      <h2 className="text-4xl md:text-5xl font-heading text-brand mb-2">
-        Frequently Asked Questions
-      </h2>
-      <p className="text-text mb-10">Investors and partners often ask us…</p>
-      <div className="max-w-2xl mx-auto text-left">
+    <section className="bg-accent-cream py-2 pb-20 px-4 md:px-10 text-center overflow-hidden rounded-4xl">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl md:text-6xl font-heading text-brand mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-lg md:text-xl text-text mb-12">
+          Investors and partners often ask us…
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto text-left divide-y divide-muted rounded-2xl bg-white/60 shadow-xl backdrop-blur-md"
+      >
         <Accordion items={faqItems} />
-      </div>
+      </motion.div>
     </section>
   );
 }

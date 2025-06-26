@@ -7,9 +7,9 @@
   --font-heading: "Playfair Display", serif;
 
   /* Colors */
-  --color-brand: #0f4e52;
-  --color-brand-light: #e0f2f1;
-  --color-brand-dark: #003c3c;
+  --color-brand: #122f33;
+  --color-brand-light: #b2bbb6;
+  --color-brand-dark: #3f6976;
 
   --color-accent-gold: #a6923d;
   --color-accent-cream: #fff8f1;
@@ -144,7 +144,67 @@
   .space-16 {
     margin: var(--space-16);
   }
+
+  @keyframes pulse-opacity {
+    0% {
+      stroke-opacity: 0.08;
+    }
+    50% {
+      stroke-opacity: 0.3; /* Brighter */
+    }
+    100% {
+      stroke-opacity: 0.08;
+    }
+  }
+
+  .animate-pulse-once {
+    animation: pulse-opacity 2s ease-out 1;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+  }
+  .animate-pulse-second {
+    animation: pulse-opacity 2s ease-out 1;
+    animation-delay: 2.5s;
+    animation-fill-mode: both;
+  }
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 0px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 0px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .glow-pulse {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .glow-pulse,
+    .glow-subtle {
+      animation: none !important;
+    }
+  }
+
+  @keyframes glowSubtle {
+    0% {
+      box-shadow: 0 0 0px rgba(150, 148, 148, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(126, 126, 126, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 0px rgba(202, 202, 202, 0.4);
+    }
+  }
+  .glow-subtle {
+    animation: glowSubtle 2.5s ease-in-out infinite;
+  }
 }
+
 /* Tailwind V4 CSS-first config with @theme already set */
 
 @layer components {
@@ -154,19 +214,22 @@
 
   /* Variants */
   .btn-primary {
-    @apply bg-accent-gold text-white hover:bg-accent-cream hover:text-black focus-visible:ring-brand-dark;
+    @apply bg-brand-dark text-white hover:bg-brand-light hover:text-black focus-visible:ring-brand-dark hover:cursor-pointer;
   }
 
   .btn-secondary {
-    @apply bg-accent-cream text-accent-black hover:bg-brand-light focus-visible:ring-brand;
+    @apply bg-brand text-white hover:bg-brand-dark focus-visible:ring-brand hover:cursor-pointer;
   }
 
   .btn-ghost {
-    @apply bg-transparent text-brand hover:bg-brand-light focus-visible:ring-brand;
+    @apply bg-transparent text-brand hover:bg-brand-light focus-visible:ring-brand hover:cursor-pointer;
   }
 
   .btn-link {
-    @apply text-brand underline hover:text-brand-dark focus-visible:ring-brand;
+    @apply text-brand underline hover:text-brand-dark focus-visible:ring-brand hover:cursor-pointer;
+  }
+  .btn-blue {
+    @apply bg-brand-light text-brand hover:bg-brand-dark hover:text-white hover:cursor-pointer focus-visible:ring-brand;
   }
 
   /* Sizes */

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/app/lib/utils";
+import CTAButton from "./CTA";
 
 export default function ContactFormSheet() {
   const [form, setForm] = useState({
@@ -127,7 +128,7 @@ export default function ContactFormSheet() {
               value={form.lastName}
               onChange={handleChange}
               className={cn(
-                "mt-1 block w-full rounded-md border px-3 py-2",
+                "mt-1 block w-full rounded-md border px-3 py-2  border-brand",
                 errors.lastName
                   ? "border-red-500"
                   : "border-accent-cream focus:border-brand"
@@ -179,7 +180,7 @@ export default function ContactFormSheet() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-accent-cream px-3 py-2 focus:border-brand"
+            className="mt-1 block w-full rounded-md border  border-brand px-3 py-2 focus:border-brand"
           />
         </div>
 
@@ -193,7 +194,7 @@ export default function ContactFormSheet() {
             rows={4}
             value={form.message}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-accent-cream px-3 py-2 focus:border-brand"
+            className="mt-1 block w-full rounded-md border  border-brand px-3 py-2 focus:border-brand"
           />
         </div>
 
@@ -205,7 +206,7 @@ export default function ContactFormSheet() {
             checked={form.agree}
             onChange={handleChange}
             className={cn(
-              "h-4 w-4 rounded border-accent-cream text-brand focus:ring-brand",
+              "h-4 w-4 rounded border-brand text-brand focus:ring-brand",
               errors.agree && "border-red-500"
             )}
             aria-invalid={!!errors.agree}
@@ -222,12 +223,16 @@ export default function ContactFormSheet() {
           </p>
         )}
 
-        <button
-          type="submit"
-          className="mt-6 inline-block rounded-md bg-brand px-6 py-2 text-white font-medium hover:bg-brand-dark"
-        >
-          Submit
-        </button>
+        <div className="mt-6">
+          <CTAButton
+            type="submit"
+            variant="primary"
+            size="base"
+            isLoading={false}
+          >
+            Submit
+          </CTAButton>
+        </div>
       </form>
     </div>
   );

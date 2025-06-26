@@ -36,7 +36,7 @@ export default function FeatureSection({
   return (
     <section
       className={cn(
-        "flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 px-6 py-8 md:py-12",
+        "flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20 px-6 py-12 md:py-20",
         reverse && "md:flex-row-reverse",
         className
       )}
@@ -44,29 +44,37 @@ export default function FeatureSection({
       {/* Text content */}
       <div
         className={cn(
-          "w-full md:w-1/2 space-y-3",
+          "w-full md:w-1/2 space-y-6",
           align === "left" && "text-left",
           align === "right" && "text-right",
           align === "center" && "text-center"
         )}
       >
         {subtitle && (
-          <p className="text-accent-gold text-sm uppercase tracking-wide font-semibold">
+          <p className="text-accent-gold text-base md:text-lg uppercase tracking-wide font-semibold py-2">
             {subtitle}
           </p>
         )}
-        <h2 className="text-3xl md:text-4xl font-heading text-brand font-bold">
+        <h2 className="text-5xl md:text-6xl font-heading text-brand font-bold py-2">
           {title}
         </h2>
         {body && (
-          <p className="text-text text-base md:text-lg max-w-prose">{body}</p>
+          <p className="text-text text-xl md:text-2xl max-w-prose py-">
+            {body}
+          </p>
         )}
         {cta && (
-          <div className="mt-4">
-            <CTAButton onClick={cta.onClick}>{cta.label}</CTAButton>
+          <div className="mt-8">
+            <CTAButton
+              className="glow-subtle"
+              variant="primary"
+              onClick={cta.onClick}
+            >
+              {cta.label}
+            </CTAButton>
           </div>
         )}
-        {children && <div className="mt-4">{children}</div>}
+        {children && <div className="mt-6">{children}</div>}
       </div>
 
       {/* Image */}
@@ -76,7 +84,7 @@ export default function FeatureSection({
           alt={imageAlt}
           width={600}
           height={600}
-          className="rounded-xl max-h-[400px] md:max-h-[500px] w-auto h-auto object-contain"
+          className="max-h-[400px] md:max-h-[500px] w-auto h-auto object-contain"
         />
       </div>
     </section>

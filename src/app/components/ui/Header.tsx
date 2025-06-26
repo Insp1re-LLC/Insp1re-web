@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import CTA from "./CTA";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -28,26 +29,29 @@ export default function Header() {
       </Link>
 
       {/* Desktop Nav */}
-      <nav className="hidden md:flex space-x-6 text-sm font-medium">
+      <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={`transition-colors ${
+            className={`transition-all duration-200 transform ${
               pathname === item.href
                 ? "text-brand font-semibold"
-                : "text-brand hover:text-brand-dark"
+                : "text-brand hover:text-brand-dark hover:scale-105"
             }`}
           >
             {item.label}
           </Link>
         ))}
-        <Link
+        <CTA
+          as="link"
           href="/download"
-          className="ml-4 bg-brand text-white px-4 py-2 rounded-full text-sm hover:bg-brand-dark"
+          variant="secondary"
+          size="base"
+          className="ml-6"
         >
           Download App
-        </Link>
+        </CTA>
       </nav>
 
       {/* Mobile Menu Toggle */}
@@ -76,13 +80,16 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
+          <CTA
+            as="link"
             href="/download"
-            className="bg-brand text-white px-4 py-2 rounded-full text-sm hover:bg-brand-dark"
+            variant="secondary"
+            size="base"
+            className="text-center"
             onClick={() => setMenuOpen(false)}
           >
             Download App
-          </Link>
+          </CTA>
         </div>
       )}
     </header>

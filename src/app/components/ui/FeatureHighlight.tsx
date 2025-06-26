@@ -29,7 +29,7 @@ export default function FeatureHighlight({
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
         >
-          <div className="w-16 h-16 rounded-full bg-accent-cream border-2 border-brand flex items-center justify-center text-2xl text-brand">
+          <div className="w-16 h-16 bg-white rounded-full border-2 border-brand flex items-center justify-center text-2xl text-brand">
             {item.icon}
           </div>
           <p className="text-sm text-text font-medium">{item.label}</p>

@@ -32,26 +32,26 @@ export default function Accordion({
   };
 
   return (
-    <div className="divide-y divide-accent-cream border border-accent-cream rounded-md">
+    <div className="divide-y divide-accent-cream">
       {items.map((item, index) => {
         const isOpen = openIndexes.includes(index);
         return (
           <div key={index}>
             <button
               onClick={() => toggleIndex(index)}
-              className="w-full flex justify-between items-center p-4 text-left font-medium text-brand hover:bg-accent-cream"
+              className="w-full flex justify-between items-center p-6 text-left font-semibold text-brand text-lg md:text-xl hover:bg-brand-light hover:cursor-pointer hover:rounded-2xl"
             >
               <span>{item.title}</span>
               <span className="ml-4">
                 {isOpen ? (
-                  <FaChevronUp className="text-sm" />
+                  <FaChevronUp className="text-base" />
                 ) : (
-                  <FaChevronDown className="text-sm" />
+                  <FaChevronDown className="text-base" />
                 )}
               </span>
             </button>
             {isOpen && (
-              <div className="px-4 pb-4 text-sm text-text">
+              <div className="px-6 pb-6 text-md md:text-lg text-text leading-relaxed">
                 {typeof item.content === "string" ? (
                   <p>{item.content}</p>
                 ) : (

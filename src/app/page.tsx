@@ -7,6 +7,8 @@ import FeatureHighlight from "./components/ui/FeatureHighlight";
 import Feature from "@/app/components/ui/Feature";
 import { FaBrain, FaChartLine, FaDumbbell } from "react-icons/fa";
 import WideSection from "./components/ui/WideSection";
+import { motion } from "framer-motion";
+import PromoBanner from "./components/ui/PromoBanner";
 
 export default function HomePage() {
   return (
@@ -19,39 +21,55 @@ export default function HomePage() {
         title=""
         className="!py-0"
       />
-
-      <Feature
-        title="Transform Yourself, Insp1re the World"
-        body="Join thousands mastering self-awareness, fitness & mindfulness – all in one app."
-        imageSrc="/assets/phoneMockup.png"
-        cta={{ label: "Limited Time Offer" }}
-        reverse
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <FeatureHighlight
-          items={[
-            { icon: <FaBrain />, label: "Mindfulness" },
-            { icon: <FaDumbbell />, label: "Fitness Plans" },
-            { icon: <FaChartLine />, label: "Track Progress" },
-          ]}
-          className="mt-4"
+        <Feature
+          title="Transform Yourself, Insp1re the World"
+          body="Join thousands mastering self-awareness, fitness & mindfulness – all in one app."
+          imageSrc="/assets/phoneMockup.png"
+          cta={{ label: "Limited Time Offer" }}
+          reverse
+        >
+          <FeatureHighlight
+            items={[
+              { icon: <FaBrain />, label: "Mindfulness" },
+              { icon: <FaDumbbell />, label: "Fitness Plans" },
+              { icon: <FaChartLine />, label: "Track Progress" },
+            ]}
+            className="mt-4"
+          />
+        </Feature>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <Feature
+          title="The app has helped me become more mindful and focused in my daily life"
+          body="Inspire operates on a freemium model with subscription upgrades and affiliate wellness partnerships."
+          imageSrc="/assets/profilepic.png"
+          className="pt-0"
         />
-      </Feature>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <WideSection
+          title={"Get weekly inspiration tips and updates"}
+          className="py-12"
+        />
+      </motion.div>
 
-      <Feature
-        title="The app has helped me become more mindful and focused in my daily life"
-        body="Inspire operates on a freemium model with subscription upgrades and affiliate wellness partnerships."
-        imageSrc="/assets/profilepic.png"
-        className="pt-0"
-      />
-
-      <WideSection
-        title={"Get weekly inspiration tips and updates"}
-        className="py-12"
-      />
-
-      <section className="bg-accent-gold text-white py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-heading">PROMO</h2>
-      </section>
+      <PromoBanner />
 
       <Footer />
     </main>
