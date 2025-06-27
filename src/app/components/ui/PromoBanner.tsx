@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import { cn } from "@/app/lib/utils";
 
 type PromoBannerProps = {
@@ -12,10 +12,10 @@ type PromoBannerProps = {
 };
 
 export default function PromoBanner({
-  headline = "Follow us on social for a chance to win a free month of Insp1re Limitless!",
-  subtext = "Winners announced monthly. Tap below to join the community.",
-  ctaText = "See our socials",
-  ctaLink = "/links",
+  // headline = "Follow us on social for a chance to win a free month of Insp1re Limitless!",
+  // subtext = "Winners announced monthly. Tap below to join the community.",
+  // ctaText = "See our socials",
+  // ctaLink = "/links",
   className,
 }: PromoBannerProps) {
   return (

@@ -19,7 +19,7 @@ export default function FeatureBulletBlock({
   bullets,
   icon,
   cta,
-  centered = true,
+  //   centered = true,
   className = "",
 }: FeatureBulletBlockProps) {
   return (
