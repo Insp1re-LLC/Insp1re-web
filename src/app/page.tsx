@@ -44,6 +44,7 @@ export default function HomePage() {
           />
         </Feature>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -55,6 +56,7 @@ export default function HomePage() {
           body="Inspire operates on a freemium model with subscription upgrades and affiliate wellness partnerships."
           imageSrc="/assets/profilepic.png"
           className="pt-0"
+          withOverlayLines
         />
       </motion.div>
       <motion.div
@@ -68,7 +70,20 @@ export default function HomePage() {
           className="py-12"
         />
       </motion.div>
-
+      {/* <div className="relative w-full overflow-hidden leading-none -mt-1">
+        <svg
+          className="w-full h-auto"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            fill="#a6923d" // or your promo banner background
+            d="M0,224L80,208C160,192,320,160,480,160C640,160,800,192,960,186.7C1120,181,1280,139,1360,117.3L1440,96V0H0Z"
+          />
+        </svg>
+      </div> */}
       <PromoBanner />
 
       <Footer />

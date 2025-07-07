@@ -19,7 +19,7 @@ export default function FeatureHighlight({
   className,
 }: FeatureHighlightProps) {
   return (
-    <div className={cn("flex flex-wrap justify-center gap-8", className)}>
+    <div className={cn("flex flex-wrap justify-center gap-8 py-4", className)}>
       {items.map((item, index) => (
         <motion.div
           key={index}

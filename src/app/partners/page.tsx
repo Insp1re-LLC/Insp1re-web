@@ -13,7 +13,6 @@ export default function PartnerPage() {
   return (
     <main className="min-h-screen flex flex-col bg-accent-cream text-text">
       <Header />
-
       {/* Hero Section with flowing background lines */}
       <div className="relative overflow-hidden bg-brand text-white">
         <Hero
@@ -26,7 +25,6 @@ export default function PartnerPage() {
           withFlowLines={true}
         />
       </div>
-
       {/* Content Sections */}
       <div className="space-y-20 px-4 sm:px-6 md:px-10 max-w-6xl mx-auto">
         <motion.div
@@ -44,8 +42,8 @@ By combining mindfulness, movement, and motivation, Insp1re helps individuals bu
             align="left"
             className="z-10"
           />
-          <div className="absolute top-[3%] right-[-1%] w-[300px] h-[280px] md:w-[508px] md:h-[488px] md:top-[3%] md:right-[-1%] border-2 border-accent-gold z-0"></div>
-          <div className="absolute top-[5%] right-[-2%] w-[300px] h-[280px] md:w-[508px] md:h-[488px] md:top-[5%] md:right-[-2%] border-2 border-accent-gold opacity-80 z-0"></div>
+          <div className="absolute top-[3%] right-[-1%] w-[300px] h-[280px] md:w-[473px] md:h-[473px] md:top-[3%] md:right-[-1%] border-2 border-accent-gold z-10"></div>
+          <div className="absolute top-[5%] right-[-2%] w-[300px] h-[280px] md:w-[473px] md:h-[473px] md:top-[5%] md:right-[-2%] border-2 border-accent-gold opacity-80 z-10"></div>
         </motion.div>
 
         <motion.div
@@ -64,8 +62,8 @@ As a partner, you'll help amplify that mission while gaining access to collabora
             align="left"
             className="z-10"
           />
-          <div className="absolute top-[3%] left-[-1%] w-[300px] h-[280px] md:w-[508px] md:h-[488px] md:top-[3%] md:left-[-1%] border-2 border-accent-gold z-0"></div>
-          <div className="absolute top-[5%] left-[-2%] w-[300px] h-[280px] md:w-[508px] md:h-[488px] md:top-[5%] md:left-[-2%] border-2 border-accent-gold opacity-80 z-0"></div>
+          <div className="absolute top-[3%] left-[-1%] w-[300px] h-[280px] md:w-[473px] md:h-[473px] md:top-[3%] md:left-[-1%] border-2 border-accent-gold z-10"></div>
+          <div className="absolute top-[5%] left-[-2%] w-[300px] h-[280px] md:w-[473px] md:h-[473px] md:top-[5%] md:left-[-2%] border-2 border-accent-gold opacity-80 z-10"></div>
         </motion.div>
         <motion.div
           className="relative"
@@ -92,8 +90,7 @@ As a partner, you'll help amplify that mission while gaining access to collabora
         </motion.div>
         <FaqSection />
       </div>
-
-      <Footer />
+      <Footer topWaveColor="#fff9f3" />{" "}
     </main>
   );
 }

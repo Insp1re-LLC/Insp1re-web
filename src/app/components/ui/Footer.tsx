@@ -2,10 +2,28 @@
 
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa";
+type FooterProps = {
+  topWaveColor?: string; // default to accent gold if none provided
+};
 
-export default function Footer() {
+export default function Footer({ topWaveColor = "#a6923d" }: FooterProps) {
   return (
-    <footer className="bg-brand text-white border-t border-accent-gold pt-12 px-6">
+    <footer className="bg-brand text-white relative">
+      {/* Wave at the top */}
+      <div className="w-full overflow-hidden leading-none -mb-1">
+        <svg
+          className="w-full h-auto"
+          viewBox="0 0 1440 200"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            fill={topWaveColor}
+            d="M0,160 C120,140 240,120 360,130 C480,140 600,180 720,190 C840,200 960,180 1080,160 C1200,140 1320,120 1440,100 L1440,0 L0,0 Z"
+          />
+        </svg>
+      </div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left: Brand and copyright */}
         <div>

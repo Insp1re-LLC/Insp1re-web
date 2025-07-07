@@ -22,14 +22,14 @@ export default function PromoBanner({
     <section
       role="region"
       aria-label="Social promo"
-      className={cn("bg-accent-gold py-8 px-4 md:px-8 text-center", className)}
+      className="bg-accent-gold py-8 px-4 md:px-8 text-center"
     >
-      <div className="py-10 px-20">
+      <div className="pt-32 pb-10 px-4 md:px-20">
         <p className="text-6xl text-white font-heading">
           Find us on social for a chance to win{" "}
-          <p className="font-bold text-white">1 month</p>
-          <p className="text-brand"> Insp1re Limitless!</p>
         </p>
+        <p className="font-bold text-white text-6xl font-heading">1 month</p>
+        <p className="text-brand text-6xl font-heading"> Insp1re Limitless!</p>
       </div>
     </section>
   );

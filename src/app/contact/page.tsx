@@ -7,7 +7,7 @@ export default function ContactPage() {
     <main className=" space-y-8 bg-accent-cream text-text font-sans">
       <Header />
       <ContactFormSheet />
-      <Footer />
+      <Footer topWaveColor="#fff9f3" />
     </main>
   );
 }
