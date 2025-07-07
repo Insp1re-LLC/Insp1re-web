@@ -1,7 +1,7 @@
 "use client";
 
 // import Link from "next/link";
-import { cn } from "@/app/lib/utils";
+// import { cn } from "@/app/lib/utils";
 
 type PromoBannerProps = {
   headline?: string;
@@ -11,13 +11,12 @@ type PromoBannerProps = {
   className?: string;
 };
 
-export default function PromoBanner({
-  // headline = "Follow us on social for a chance to win a free month of Insp1re Limitless!",
-  // subtext = "Winners announced monthly. Tap below to join the community.",
-  // ctaText = "See our socials",
-  // ctaLink = "/links",
-  className,
-}: PromoBannerProps) {
+export default function PromoBanner({}: // headline = "Follow us on social for a chance to win a free month of Insp1re Limitless!",
+// subtext = "Winners announced monthly. Tap below to join the community.",
+// ctaText = "See our socials",
+// ctaLink = "/links",
+// className,
+PromoBannerProps) {
   return (
     <section
       role="region"
