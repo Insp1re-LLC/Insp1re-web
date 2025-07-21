@@ -1,9 +1,9 @@
-// src/app/components/ui/NewsletterCard.tsx
 type NewsletterPost = {
   title: string;
   link: string;
   pubDate: string;
   contentSnippet: string;
+  imageUrl?: string;
 };
 
 export default function NewsletterCard({ post }: { post: NewsletterPost }) {
@@ -14,6 +14,13 @@ export default function NewsletterCard({ post }: { post: NewsletterPost }) {
       rel="noopener"
       className="block bg-white rounded-lg shadow-md hover:shadow-lg transition p-6"
     >
+      {post.imageUrl && (
+        <img
+          src={post.imageUrl}
+          alt={post.title}
+          className="w-full h-48 object-cover"
+        />
+      )}
       <time className="text-xs text-text/70">
         {new Date(post.pubDate!).toLocaleDateString()}
       </time>

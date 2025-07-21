@@ -20,7 +20,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans text-text">{children}</body>
+      <body className="font-sans text-text">
+        <a
+          href="#main-content"
+          className="absolute left-1/2 top-2 -translate-x-1/2 z-100 bg-white text-brand font-semibold px-4 py-2 rounded-full shadow-md border-2 border-brand focus:outline-none focus:ring-2 focus:ring-brand transition-all opacity-0 focus:opacity-100"
+        >
+          Skip to main content
+        </a>
+
+        {children}
+      </body>
     </html>
   );
 }

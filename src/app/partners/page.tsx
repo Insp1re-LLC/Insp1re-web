@@ -11,7 +11,10 @@ import { motion } from "framer-motion";
 
 export default function PartnerPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-accent-cream text-text">
+    <main
+      id="main-content"
+      className="min-h-screen flex flex-col bg-accent-cream text-text"
+    >
       <Header />
       {/* Hero Section with flowing background lines */}
       <div className="relative overflow-hidden bg-brand text-white">

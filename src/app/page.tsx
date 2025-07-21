@@ -9,12 +9,46 @@ import { FaBrain, FaChartLine, FaDumbbell } from "react-icons/fa";
 import WideSection from "./components/ui/WideSection";
 import { motion } from "framer-motion";
 import PromoBanner from "./components/ui/PromoBanner";
-
+import ModalPromo from "./components/ui/ModalPromo";
+import { useEffect, useState } from "react";
+import { FiZap } from "react-icons/fi";
+import BannerPromo from "./components/ui/ScrollBanner";
+import ScrollBanner from "./components/ui/ScrollBanner";
 export default function HomePage() {
-  return (
-    <main className="min-h-screen flex flex-col">
-      <Header />
+  // *****uncomment for Modal Usage ******
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalOpen(true);
+    }, 5000);
 
+    return () => clearTimeout(timer);
+  }, []);
+  // ***********
+  return (
+    <main id="main-content" className="min-h-screen flex flex-col">
+      <Header />
+      {/* uncomment for banner usage  */}
+      <ScrollBanner
+        headline="✨ Limited-time Offer: Get 20% Off Premium!"
+        ctaLabel="Claim Now"
+        ctaHref="/promo"
+      />
+      {/* *** end banner ****** */}
+      {/* uncomment for modal Usage */}
+      <ModalPromo
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        icon={<FiZap className="text-brandGold text-4xl mx-auto" />}
+        headline="20% Off!"
+        subtext="Limited-time offer — unlock premium features for less."
+        ctaLabel="Claim Offer"
+        onCtaClick={() => {
+          console.log("Claim offer clicked");
+          setIsModalOpen(false);
+        }}
+      />
+      {/* **** end modal **** */}
       <Hero
         variant="image"
         imageSrc="/assets/heroMeditation.png"
