@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { FiX } from "react-icons/fi";
-import Link from "next/link";
 import CTAButton from "./CTA";
 
 interface ScrollPromoBannerProps {

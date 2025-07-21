@@ -12,7 +12,6 @@ import PromoBanner from "./components/ui/PromoBanner";
 import ModalPromo from "./components/ui/ModalPromo";
 import { useEffect, useState } from "react";
 import { FiZap } from "react-icons/fi";
-import BannerPromo from "./components/ui/ScrollBanner";
 import ScrollBanner from "./components/ui/ScrollBanner";
 export default function HomePage() {
   // *****uncomment for Modal Usage ******
